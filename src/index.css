@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #333;
+  --color-secondary: #888;
+  --color-thr: #555;
+  --color-sub: #404040;
+  --font-roboto: 'Roboto Mono', monospace;
+}
+@layer components {
+  .btn {
+    cursor: pointer;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    padding: calc(var(--spacing) * 2) calc(var(--spacing) * 6);
+    &:hover {
+      background-color: var(--color-white);
+      border-style: var(solid);
+      border-width: var(--1px);
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      transition: var(500ms);
+    }
+  }
+}
+@utility container {
+  width: 100%;
+  @media (width >= 40rem) {
+    max-width: 40rem;
+  }
+  @media (width >= 48rem) {
+    max-width: 48rem;
+  }
+  @media (width >= 64rem) {
+    max-width: 64rem;
+  }
+  @media (width >= 80rem) {
+    max-width: 80rem;
+  }
+}
+
+:root {
+  font-family: 'Roboto Mono', monospace;
+}

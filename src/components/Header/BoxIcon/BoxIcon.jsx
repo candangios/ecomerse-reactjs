@@ -1,6 +1,7 @@
 import fbIcon from '@icons/svgs/fbIcon.svg';
 import insIcon from '@icons/svgs/insIcon.svg';
 import ytbIcon from '@icons/svgs/ytbIcon.svg';
+import { Link } from 'react-router';
 
 function BoxIcon({ type, href }) {
   const handleRenderIcon = (type) => {
@@ -14,8 +15,10 @@ function BoxIcon({ type, href }) {
     }
   };
   return (
-    <div className='bg-red-500 p-1'>
-      <img className='bg-red-800' src={handleRenderIcon(type)} alt={type} />
+    <div>
+      <div className='w-[26px] h-[26px] bg-primary rounded-full flex items-center justify-center'>
+        <img src={handleRenderIcon(type)} alt={type} />
+      </div>
     </div>
   );
 }

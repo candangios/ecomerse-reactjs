@@ -1,5 +1,9 @@
 function Menu({ content, href }) {
-  return <div>{content}</div>;
+  return (
+    <div className='text-secondary hover:text-primary cursor-pointer'>
+      {content}
+    </div>
+  );
 }
 
 export default Menu;
