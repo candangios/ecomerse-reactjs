@@ -4,7 +4,6 @@ import useTranslateXImage from '../../hooks/useTranslateXImage';
 
 function SaleHomePage() {
   const { translateXPosition } = useTranslateXImage();
-  console.log(translateXPosition);
   return (
     <div className='mx-auto mt-[100px] flex justify-between items-center'>
       <div
@@ -21,7 +20,7 @@ function SaleHomePage() {
         <p className='text-sm text-center text-secondary'>
           Libero sed faucibus facilisis fermentum. Est nibh sed massa sodales.
         </p>
-        <btn className='btn'>Read more</btn>
+        <button className='btn'>Read more</button>
       </div>
       <div
         style={{

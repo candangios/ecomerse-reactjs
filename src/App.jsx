@@ -5,13 +5,18 @@ import MainLayout from '@components/Layout/Layout';
 import Header from '@components/Header/Header';
 import Banner from './components/Baner/Baner';
 import HomePage from './Pages/Home/Home';
+import { SideBarProvider } from './contexts/SideBarProvider';
+import SideBar from './components/SideBar/SideBar';
 
 function App() {
   return (
     <>
-      <MainLayout>
-        <HomePage />
-      </MainLayout>
+      <SideBarProvider>
+        <SideBar />
+        <MainLayout>
+          <HomePage />
+        </MainLayout>
+      </SideBarProvider>
     </>
   );
 }

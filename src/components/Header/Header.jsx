@@ -7,23 +7,30 @@ import HeartIcon from '@icons/svgs/heartIcon.svg';
 import ReloadIcon from '@icons/svgs/reloadIcon.svg';
 import CartIcon from '@icons/svgs/cartIcon.svg';
 import useScrollHandling from '../../hooks/useScrollHanding.js';
+import { useSideBar } from '../../hooks/useSideBar.js';
 import { useEffect, useState } from 'react';
+import { Heart, RefreshCcw, ShoppingCart } from 'lucide-react';
 
 function Header() {
   const [fixedPosition, setFixedPosition] = useState(false);
   const { scrollPosition } = useScrollHandling();
+
+  const { dispatch } = useSideBar();
   useEffect(() => {
-    setFixedPosition(scrollPosition > 100 ? true : false);
+    setFixedPosition(scrollPosition > 83 ? true : false);
   }, [scrollPosition]);
-  console.log('rerender');
+
+  const setIsOpen = (type) => {
+    dispatch({ type });
+  };
 
   return (
     <div
       className={`w-full ${
         fixedPosition
-          ? 'bg-white  fixed shadow-md -top-[83px] translate-y-[83px]'
+          ? 'bg-white  fixed shadow-md -top-[83px] translate-y-[83px] transition-transform duration-300 '
           : 'top-0 absolute bg-transparent'
-      } z-30 transition-all duration-500  ease-in-out flex items-center justify-center`}
+      } z-30 flex items-center justify-center`}
     >
       <div className='container flex justify-between'>
         <div className='flex gap-3 items-center'>
@@ -41,6 +48,7 @@ function Header() {
                   key={item.content}
                   content={item.content}
                   href={item.href}
+                  onClick={() => {}}
                 />
               );
             })}
@@ -57,19 +65,39 @@ function Header() {
                   key={item.content}
                   content={item.content}
                   href={item.href}
+                  onClick={() => {
+                    if (item.content === 'SignIn') {
+                      setIsOpen('LOGIN');
+                    }
+                  }}
                 />
               );
             })}
           </div>
           <div className='flex items-center gap-2'>
-            <div className='w-[26px] h-[26px] rounded-full flex items-center justify-center'>
-              <img src={ReloadIcon} alt='Reload Icon' />
+            <div
+              onClick={() => {
+                setIsOpen('COMPARE');
+              }}
+              className='w-[26px] h-[26px] rounded-full flex items-center justify-center cursor-pointer'
+            >
+              <RefreshCcw className='text-primary' />
             </div>
-            <div className='w-[26px] h-[26px] rounded-full flex items-center justify-center'>
-              <img src={HeartIcon} alt='Reload Icon' />
+            <div
+              onClick={() => {
+                setIsOpen('WISHLIST');
+              }}
+              className='w-[26px] h-[26px] rounded-full flex items-center justify-center cursor-pointer'
+            >
+              <Heart className='text-primary' />
             </div>
-            <div className='w-[26px] h-[26px] p-6 rounded-full flex items-center justify-center'>
-              <img src={CartIcon} alt='Reload Icon' />
+            <div
+              onClick={() => {
+                setIsOpen('CART');
+              }}
+              className='w-[26px] h-[26px] rounded-full flex items-center justify-center cursor-pointer'
+            >
+              <ShoppingCart className='text-primary' />
             </div>
           </div>
         </div>

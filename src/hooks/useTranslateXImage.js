@@ -5,7 +5,6 @@ import useScrollHandling from './useScrollHanding';
 const useTranslateXImage = () => {
   const { scrollPosition, scrollDriction } = useScrollHandling();
   const [translateXPosition, setTranslateXPosition] = useState(80);
-  console.log(scrollPosition);
 
   const handleTranslateX = () => {
     if (scrollDriction === 'down' && scrollPosition >= 1500) {
