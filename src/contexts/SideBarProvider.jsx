@@ -1,5 +1,4 @@
 import { createContext, useReducer, useState } from 'react';
-import { data } from 'react-router';
 
 export const SideBarContext = createContext();
 //Create a reducer function
@@ -14,6 +13,10 @@ const sideReducer = (state, action) => {
       return { isOpen: true, type: 'LOGIN' };
     case 'COMPARE':
       return { isOpen: true, type: 'COMPARE' };
+    case 'WISHLIST':
+      return { isOpen: true, type: 'WISHLIST' };
+    case 'CART':
+      return { isOpen: true, type: 'CART' };
     case 'EXITS':
       return { ...state, isOpen: false };
     default:

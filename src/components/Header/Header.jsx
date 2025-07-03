@@ -33,15 +33,15 @@ function Header() {
       } z-30 flex items-center justify-center`}
     >
       <div className='container flex justify-between'>
-        <div className='flex gap-3 items-center'>
-          <div className='flex gap-2'>
+        <div className='flex gap-5 items-center'>
+          <div className='flex gap-3'>
             {dataBoxIcon.map((item) => {
               return (
                 <BoxIcon key={item.type} type={item.type} href={item.href} />
               );
             })}
           </div>
-          <div className='flex gap-3'>
+          <div className='flex gap-4'>
             {dataMenu.slice(0, 3).map((item) => {
               return (
                 <Menu
@@ -58,7 +58,7 @@ function Header() {
           <img className='w-full max-w-[153px] ' src={Logo} alt='Logo' />
         </div>
         <div className=' flex items-center gap-3'>
-          <div className='flex gap-3 '>
+          <div className='flex gap-4 '>
             {dataMenu.slice(3, 6).map((item) => {
               return (
                 <Menu

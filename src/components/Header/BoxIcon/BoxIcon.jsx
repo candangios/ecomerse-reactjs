@@ -16,7 +16,7 @@ function BoxIcon({ type, href }) {
   };
   return (
     <div>
-      <div className='w-[26px] h-[26px] bg-primary rounded-full flex items-center justify-center'>
+      <div className='cursor-pointer w-[26px] h-[26px] bg-primary rounded-full flex items-center justify-center'>
         <img src={handleRenderIcon(type)} alt={type} />
       </div>
     </div>

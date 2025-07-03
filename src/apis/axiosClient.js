@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
 
 const axiosClient = axios.create({
   baseURL: 'https://be-project-reactjs.vercel.app/api/v1',
@@ -54,6 +55,15 @@ const handleResponseErr = async (err) => {
       return Promise.reject(error);
     }
   }
+  let errorMsg = err?.message;
+  if (err.response?.data?.message) {
+    errorMsg = err.response?.data?.message;
+  }
+  if (err.response?.status !== 410) {
+    toast.error(errorMsg);
+  }
+
+  return Promise.reject(error);
 };
 
 axiosClient.interceptors.request.use(

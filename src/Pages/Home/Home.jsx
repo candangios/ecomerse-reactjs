@@ -26,7 +26,6 @@ function HomePage() {
   }, []);
   return (
     <div>
-      {/* <TransformNavbar /> */}
       <Header />
       <Banner />
       <div className=' mt-[-75px]'>

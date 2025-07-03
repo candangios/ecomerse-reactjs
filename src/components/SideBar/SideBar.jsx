@@ -1,7 +1,10 @@
 import { X } from 'lucide-react';
-import Login from '../ContentSideBar/Login';
+import LoginForm from '../ContentSideBar/Auth/LoginForm';
 import { useSideBar } from '@/hooks/useSideBar';
 import Compare from '../ContentSideBar/Compare/Compare';
+import WishList from '../ContentSideBar/WishList/WishList';
+import Cart from '../ContentSideBar/Cart/Cart';
+import Auth from '../ContentSideBar/Auth/Auth';
 
 function SideBar() {
   const { state, dispatch } = useSideBar();
@@ -14,9 +17,13 @@ function SideBar() {
   const renderContentBySideType = (type) => {
     switch (type) {
       case 'LOGIN':
-        return <Login />;
+        return <Auth />;
       case 'COMPARE':
         return <Compare />;
+      case 'WISHLIST':
+        return <WishList />;
+      case 'CART':
+        return <Cart />;
       default:
         return null;
     }
