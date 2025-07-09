@@ -44,19 +44,22 @@ function Header() {
           <div className='flex gap-4'>
             {dataMenu.slice(0, 3).map((item) => {
               return (
-                <Menu
-                  key={item.content}
-                  content={item.content}
-                  href={item.href}
-                  onClick={() => {}}
-                />
+                <Link key={item.content} to={item.href}>
+                  <Menu
+                    content={item.content}
+                    href={item.href}
+                    onClick={() => {}}
+                  />
+                </Link>
               );
             })}
           </div>
         </div>
-        <div>
-          <img className='w-full max-w-[153px] ' src={Logo} alt='Logo' />
-        </div>
+
+        <Link to='/'>
+          <img className='w-full max-w-[153px]' src={Logo} alt='Logo' />
+        </Link>
+
         <div className=' flex items-center gap-3'>
           <div className='flex gap-4 '>
             {dataMenu.slice(3, 6).map((item) => {

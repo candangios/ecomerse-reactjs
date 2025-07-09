@@ -4,7 +4,7 @@ const routers = [
   {
     path: '/',
     component: lazy(() => import('@/pages/Home/Home'))
-  }
+  },
   // {
   //   path: '/blog',
   //   component: lazy(() => import('@components/Blog/Blog'))
@@ -12,7 +12,7 @@ const routers = [
   {
     path: '/shop',
     component: lazy(() => import('@pages/OurShop/OurShop'))
-  },
+  }
   // {
   //   path: '/cart',
   //   component: lazy(() => import('@pages/Cart/Cart'))

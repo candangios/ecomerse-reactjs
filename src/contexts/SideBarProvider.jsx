@@ -5,7 +5,8 @@ export const SideBarContext = createContext();
 const initState = {
   isOpen: false,
   type: null,
-  data: null
+  detailProduct: null,
+  listProductCart: null
 };
 const sideReducer = (state, action) => {
   switch (action.type) {

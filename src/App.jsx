@@ -11,6 +11,7 @@ import SideBar from './components/SideBar/SideBar';
 import { ToastContainer } from 'react-toastify';
 import { BrowserRouter, Route, Router, Routes } from 'react-router';
 import routers from './routers/routers';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (

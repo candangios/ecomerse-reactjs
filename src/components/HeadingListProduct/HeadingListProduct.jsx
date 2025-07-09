@@ -8,7 +8,14 @@ function HeadingListproducts({ data }) {
         <HeadingCountDown />
         <div className='grid grid-cols-2 gap-2.5'>
           {data.map((item) => (
-            <ProductItem data={item} />
+            <ProductItem
+              key={item.id}
+              src={item.images[0]}
+              prevSrc={item.images[1]}
+              name={item.name}
+              price={item.price}
+              details={item}
+            />
           ))}
         </div>
       </div>
