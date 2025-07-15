@@ -2,7 +2,7 @@ import { Clock3, Percent, ShieldCheck, Truck } from 'lucide-react';
 function SectionInfo() {
   return (
     <div className='lg:container mx-auto bg-primary p-4 '>
-      <div className='grid grid-cols-4 sm:grid-cols-1 md:grid-cols-2 px-8 py-4 gap-8'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 px-8 py-4 gap-8'>
         <div className='delivery_wrapper'>
           <div className='flex items-center gap-4'>
             <p>
