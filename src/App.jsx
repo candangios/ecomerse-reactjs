@@ -13,7 +13,7 @@ function App() {
     <SideBarProvider>
       <BrowserRouter basename='/'>
         <SideBar />
-        <Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             {routers.map((item, index) => {
               return (
