@@ -3,7 +3,7 @@ import { lazy } from 'react';
 const routers = [
   {
     path: '/',
-    component: lazy(() => import('@/pages/Home/Home.jsx'))
+    component: lazy(() => import('@/pages/Home/Home'))
   },
   // {
   //   path: '/blog',
@@ -11,7 +11,7 @@ const routers = [
   // },
   {
     path: '/shop',
-    component: lazy(() => import('@pages/OurShop/OurShop.jsx'))
+    component: lazy(() => import('@pages/OurShop/OurShop'))
   }
   // {
   //   path: '/cart',
